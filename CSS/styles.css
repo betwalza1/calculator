@@ -1,0 +1,81 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #5490cb;
+}
+
+.calculator {
+    width: 400px; /* Largeur fixe pour éviter l'élargissement */
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 25px;
+    background-color: rgba(74, 184, 23, 0.21);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden; /* Empêche le débordement */
+}
+
+.calculator:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+#display {
+    width: 100%;
+    height: 50px;
+    font-size: 28px;
+    text-align: right;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.buttons, .scientific-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
+    gap: 10px; /* Espace entre les boutons */
+}
+
+button {
+    height: 60px; /* Hauteur uniforme pour tous les boutons */
+    font-size: 24px; /* Taille de police uniforme */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #15cb9b;
+    color: rgb(155, 58, 58);
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    box-sizing: border-box; /* Inclut le padding dans la largeur */
+}
+
+/* Ajustement spécifique pour les boutons "7", "4", "1", "0" */
+button[data-type="small"] {
+    width: 75%; /* Réduit la largeur de ces boutons */
+}
+
+button:hover {
+    background-color: #bc8635;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Styles pour les boutons scientifiques */
+.scientific-buttons button {
+    height: 60px; /* Hauteur uniforme pour les boutons scientifiques */
+}
